@@ -1,0 +1,4 @@
+<div class="col">
+    <button *ngIf="!authService.authenticated" (click)="authService.login()">Log In</button>
+    <button *ngIf="authService.authenticated" (click)="authService.logout()">Log Out</button>
+</div>

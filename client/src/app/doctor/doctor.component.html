@@ -1,0 +1,51 @@
+<div class="row doctor-details">
+    <div class="col-5">
+        <div class="row">
+          <div class="col">
+            <img src={{doctorImage}} />
+            <div class="doctor-details-text float-left">
+                <span class="doctor-rank">{{index+1}}</span>
+                <h5>{{doctor.name}}</h5>
+                <p><i class="fa fa-map-marker marker" aria-hidden="true"></i><span>{{doctor.address}}</span></p>
+                <p><i class="fa fa-graduation-cap hat" aria-hidden="true"></i><span>{{doctor.speciality}}</span></p>
+                <p><i class="fa fa-bell bell warning" aria-hidden="true"></i><span class="warning">17 התקשרו בשעה האחרונה</span></p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col text-center">
+      <div class="row doctors-rating">
+        <div class="col">
+            <p>דירוג משתמשים</p>
+            <h4>{{doctor.rating}}</h4>
+        </div>
+        <div class="col num-of-raters">
+          <h4>{{doctor.numOfRaters}}</h4>
+          <p>דירוגים</p>
+        </div>
+      </div>
+    </div>
+    <div class="col details-wrapper">
+      <button type="button" class="btn btn-success"><i class="fa fa-envelope-o" aria-hidden="true"></i> השאר פרטים</button>
+      <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col">
+          <p><i class="fa fa-phone" aria-hidden="true"></i><span>הצג טלפון</span></p>
+          <p><i class="fa fa-square-o" aria-hidden="true"></i><span>בחירה מרובה</span></p>
+          <p class="more-details" (click)="showAdditional = !showAdditional"><span>למידע נוסף וביקורות</span>
+            <i class="fa fa-chevron-down" aria-hidden="true" *ngIf="!showAdditional"></i>
+            <i class="fa fa-chevron-left" aria-hidden="true" *ngIf="showAdditional"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showAdditional">
+    <div class="row">
+      <div class="col">
+          <app-reviews [reviews]="doctor.reviews" [about]="doctor.about"></app-reviews>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,37 @@
+<div class="row about-doctor">
+  <div class="col review">
+      <h5>ביקורות משתמשים ({{reviews.length}})</h5>
+      <div *ngFor="let review of reviews; let i = index">
+        <div *ngIf="reviewerIndex == i">
+          <div class="row">
+              <div class="col-3">
+                  <img src={{reviewerImage}}/>
+              </div>
+              <div class="col">
+                <div class="reviewers-details">
+                  <div class="row reviewers-details-titles">
+                    <div class="col">
+                        <h5 class="text-right float-right"><b>{{review.reviewerName}}</b></h5>
+                    </div>
+                    <div class="col">
+                        <p class="text-left float-left date">{{review.reviewDate}}</p>
+                    </div>
+                  </div>
+                  <i class="fa fa-angle-right" aria-hidden="true" (click)="incReviewIndex()"></i>
+                  <i class="fa fa-angle-left" aria-hidden="true" (click)="decReviewIndex()"></i>
+                  <div class="row review-text">
+                    <p>{{review.reviewText}}</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="col-7 about">
+      <h5>אודות הרופא/ה</h5>
+      <p>
+        {{about}}
+      </p>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="row hidden-sm-down">
+  <div class="col-md-9" [dragula]="first-bag" [dragulaModel]="publicDoctors">
+    <div *ngFor="let doctor of publicDoctors; let i = index">
+      <app-doctor [doctor]="doctor" [index]="i"></app-doctor>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="gmap-wrapper">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
+            <agm-marker *ngFor="let location of locationsArr" [latitude]="location.lat" [longitude]="location.lng"></agm-marker>
+        </agm-map>
+    </div>
+  </div>
+</div>
+
+<div class="row hidden-md-up">
+  <div class="col-sm-12" [dragula]="first-bag" [dragulaModel]="publicDoctors">
+    <div *ngFor="let doctor of publicDoctors; let i = index">
+      <app-doctors-mobile [doctor]="doctor" [index]="i"></app-doctors-mobile>
+    </div>
+  </div>
+</div>

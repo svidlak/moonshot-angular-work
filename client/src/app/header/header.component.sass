@@ -1,0 +1,78 @@
+@import "../../variables.sass"
+
+h3
+    color: $main-color
+    margin: 25px
+    padding-right: 25px
+    span
+        color: $secondary-color
+
+.header-image
+    background: $main-background
+    height: 200px
+    .doctor-img
+        height: 200px
+    .header-text-wrapper
+        margin-top: 35px
+        position: relative
+        h1, h3
+            margin: 25px
+        h1
+            color: $main-color
+        hr
+            background: $third-color
+            width: 384px
+            height: 1px
+        h3
+            color: $third-color
+            position: relative
+            top: -34px
+            bottom: 0
+            left: 0
+            right: 0
+            width: 278px
+            background: $main-background
+            margin: 0 auto
+            padding: 0
+
+/////////MOBILE
+
+.mobile-header-wrapper
+    background: $mobile-blue-background
+    padding-top: 15px
+    h3
+        color: white
+        font-size: 20px
+        padding: 0
+        margin: 0
+        margin-bottom: 3px
+        span
+            color: $mobile-secondary-color
+    h4
+        color: white
+        font-size: 16px
+        text-align: center
+    .mobile-header-wrapper-tip
+        color: $secondary-color
+        font-size: 14px 
+        span
+            color: red
+.mobile-header-links
+    div
+        padding: 0
+        ul
+            list-style-type: none
+            margin: 0
+            padding: 0
+            overflow: hidden
+            color: gray
+            background-color: $blue-background
+            li
+                float: right
+                width: 33vw
+                text-align: center
+                padding: 10px 0
+            li.active
+                color: $mobile-secondary-color
+                font-weight: bold
+                border-bottom: 2px solid $mobile-secondary-color
